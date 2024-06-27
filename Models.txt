@@ -1,0 +1,79 @@
+Classifications models 
+
+from sklearn.linear_model import LogisticRegression 
+from sklearn.neighbors import KNeighborsClassifier 
+from sklearn.svm import SVC 
+
+from sklearn.tree import DecisionTreeClassifier 
+from sklearn.ensemble import RandomForestClassifier 
+from sklearn.ensemble import GradientBoostingClassifier
+
+from sklearn.linear_model import Perceptron
+from sklearn.linear_model import SGDClassifier
+from sklearn.naive_bayes import GaussianNB
+
+
+
+lr = LogisticRegression()
+lr.fit(x_train,y_train)
+
+knn = KNeighborsClassifier()
+knn.fit(x_train,y_train)
+
+svc = SVC()
+svc.fit(x_train,y_train)
+
+dtc = DecisionTreeClassifier()
+dtc.fit(x_train,y_train)
+
+rfc = RandomForestClassifier()
+rfc.fit(x_train,y_train)
+
+gbc = GradientBoostingClassifier()
+gbc.fit(x_train,y_train)
+
+perc = Perceptron()
+perc.fit(x_train,y_train)
+
+sgdc = SGDClassifier()
+sgdc.fit(x_train,y_train)
+
+gnb = GaussianNB()
+gnb.fit(x_train,y_train)
+
+
+y_pred1 = lr.predict(x_test)
+y_pred2 = knn.predict(x_test)
+y_pred3 = svc.predict(x_test)
+y_pred4 = dtc.predict(x_test)
+y_pred5 = rfc.predict(x_test)
+y_pred6 = gbc.predict(x_test)
+y_pred7 = perc.predict(x_test)
+y_pred8 = sgdc.predict(x_test)
+y_pred9 = gnb.predict(x_test)
+
+
+print('Accuracy of LogisticRegression         : ',accuracy_score(y_test,y_pred1))
+print('Accuracy of KNeighborsClassifier       : ',accuracy_score(y_test,y_pred2))
+print('Accuracy of SVC                        : ',accuracy_score(y_test,y_pred3))
+print('Accuracy of DecisionTreeClassifier     : ',accuracy_score(y_test,y_pred4))
+print('Accuracy of RandomForestClassifier     : ',accuracy_score(y_test,y_pred5))
+print('Accuracy of GradientBoostingClassifier : ',accuracy_score(y_test,y_pred6))
+print("Accuracy of Perceptron		      : ",accuracy_score(y_test,y_pred7))
+print("Accuracy of SGDClassifier              : ",accuracy_score(y_test,y_pred8))
+print("Accuracy of GaussianNB                 : ",accuracy_score(y_test,y_pred9))
+
+pd.DataFrame({'Models ' : ['LogisticRegression','KNeighborsClassifier','SVC','DecisionTreeClassifier','RandomForestClassifier','GradientBoostingClassifier','Perceptron','SGDClassifier','GaussianNB'],
+              'ACC': [accuracy_score(y_test,y_pred1)*100,
+                      accuracy_score(y_test,y_pred2)*100,
+                      accuracy_score(y_test,y_pred3)*100,
+                      accuracy_score(y_test,y_pred4)*100,
+                      accuracy_score(y_test,y_pred5)*100,
+                      accuracy_score(y_test,y_pred6)*100,
+		      accuracy_score(y_test,y_pred7)*100,
+		      accuracy_score(y_test,y_pred8)*100,
+	              accuracy_score(y_test,y_pred9)*100
+                    ]})
+
+
+

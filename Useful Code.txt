@@ -1,0 +1,2 @@
+#for every T in string replace it with U
+dna.replace('T', 'U')
