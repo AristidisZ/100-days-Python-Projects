@@ -1,15 +1,13 @@
-import time
-
-current_time = time.time()
+current_time = Flask.tutorials.time()
 print(current_time)
 
 
 def speed_calc_decorator(function):
     # pass
     def wrapper_function():
-        start_time = time.time()
+        start_time = Flask.tutorials.time()
         function()
-        end_time = time.time()
+        end_time = Flask.tutorials.time()
         print(f"{function.__name__} run speed: {end_time - start_time}s")
 
     return wrapper_function
