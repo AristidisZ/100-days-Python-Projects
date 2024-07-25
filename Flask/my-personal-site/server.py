@@ -1,12 +1,12 @@
-from flask import Flask, render_template
+def find_short(s):
+    x = s.split()
+    min = len(x[0])
+    # print("min",min)
+    for i in x:
+        print(len(i))
+        if min > len(i):
+            min = len(i)
+    return min
 
-app = Flask(__name__)
 
-
-@app.route("/")
-def home():
-    return render_template('index.html')
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
+print(find_short("bitcoin take over the world maybe who knows perhaps"))

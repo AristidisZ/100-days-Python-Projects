@@ -1,9 +1,10 @@
-def get_sum(a, b):
-    numbers = []
-    for i in range(a, b+1):
-        numbers.append(i)
-    print(numbers)
-    return sum(numbers)
+def remove_every_other(arr):
+    result = []
+    for i in range(len(arr)):
+        print(i)
+        if i % 2 == 0:
+            result.append(arr[i])
+            print(result)
+    return result
 
-
-print(get_sum(-5, 10))
+remove_every_other([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
